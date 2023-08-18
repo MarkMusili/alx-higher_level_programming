@@ -4,4 +4,9 @@ def best_score(a_dictionary):
         return None
 
     res = max(a_dictionary.values())
-    return res
+    name = None
+
+    for name, value in a_dictionary.items():
+        if value == res:
+            break
+    return name
