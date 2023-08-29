@@ -4,17 +4,15 @@ def safe_print_list_integers(my_list=[], x=0):
     size = 0
     for element in my_list:
         size += 1
-    try:
-        for i in my_list:
+    for i in my_list:
+        try:
             if count < x:
                 print("{:d}".format(i), end="")
                 count += 1
-            elif count >= X:
-                break
-        if x > size:
-            raise IndexError("IndexError: list index out of range")
-
-    except (ValueError, TypeError):
+        except (ValueError, TypeError):
             pass
+    if x > size:
+        raise IndexError("IndexError: list index out of range")
+
     print()
     return count
