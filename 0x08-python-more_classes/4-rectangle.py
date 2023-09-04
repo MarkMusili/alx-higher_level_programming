@@ -67,6 +67,7 @@ class Rectangle:
         for _ in range(self.__height):
             rectangle += '#' * self.__width + '\n'
         return rectangle.rstrip()
+
     def __repr__(self):
         """This is a formal representation of the rectangle"""
         return f"Rectangle({self.__height}, {self.__width})"
