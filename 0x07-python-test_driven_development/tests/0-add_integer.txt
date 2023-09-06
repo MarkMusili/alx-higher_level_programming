@@ -1,0 +1,26 @@
+# test_cases
+add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(2, 98)
+100
+
+>>> add_integer(2)
+100
+
+>>> add_integer(2.0, 98.0)
+100
+
+>>> add_integer(-2, 98)
+96
+
+>>> add_integer(-2, -98)
+-100
+
+>>> add_integer(-2.0, -98.0)
+-100
+
+>>> add_integer(2, 's')
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
