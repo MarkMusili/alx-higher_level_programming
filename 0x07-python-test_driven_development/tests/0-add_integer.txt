@@ -1,5 +1,5 @@
 # test_cases
-add_integer = __import__('0-add_integer').add_integer
+>>> add_integer = __import__('0-add_integer').add_integer
 
 >>> add_integer(2, 98)
 100
@@ -24,3 +24,16 @@ Traceback (most recent call last):
 ...
 TypeError: b must be an integer
 
+>>> print(__import__("0-add_integer").__doc__)
+"""
+This module defines a function that adds two integers
+"""
+
+>>> python3 -c 'print(__import__("0-add_intger").add_integer.__doc__)'
+"""
+    args:
+        a (int): first integer
+        b (int): second integer
+    Return:
+        sum of the two integers
+"""
