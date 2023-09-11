@@ -14,4 +14,4 @@ def is_kind_of_class(obj, a_class):
         True: if the subclass is in base class
         False: if subclass is not it base class
     """
-    return isinstance(obj, a_class) or issubclass(type(obj), a_class)
+    return isinstance(obj, a_class)
