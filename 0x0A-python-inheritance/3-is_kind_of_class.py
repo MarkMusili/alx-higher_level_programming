@@ -4,6 +4,7 @@ This module checks wether an object is inherited
 from a specific class
 """
 
+
 def is_kind_of_class(obj, a_class):
     """
     Args:
