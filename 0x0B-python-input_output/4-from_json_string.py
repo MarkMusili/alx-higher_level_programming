@@ -1,8 +1,8 @@
 #!/usr/bin/python3
+"""
+This module decodes an object to JSON format
+"""
 import json
-"""
-This module dencodes an object to JSON format
-"""
 
 
 def from_json_string(my_obj):
