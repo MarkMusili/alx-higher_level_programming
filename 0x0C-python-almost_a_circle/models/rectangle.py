@@ -15,8 +15,8 @@ class Rectangle(Base):
         Attrubutes:
             width (int): width of the rectangle
             height (int): height of the rectangle
-            x (int): x-cordinates
-            y (int): y-cordinates
+            x (int): x-spaces
+            y (int): y-spaces
             id (int): id associated with the instance
         """
         super().__init__(id)
@@ -89,9 +89,10 @@ class Rectangle(Base):
 
     def display(self):
         """Displays the rectangle"""
+        for _ in range(self.y):
+            print()
         for _ in range(self.height):
-            rectangle = '#' * self.width
-            print(rectangle)
+            print(" " * self.x + '#' * self.width)
 
     def __str__(self):
         """Print a user friendly representation"""
