@@ -99,7 +99,7 @@ class Rectangle(Base):
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - " \
             f"{self.width}/{self.height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Updates values of Rectangle"""
         if len(args) > 0:
             if len(args) >= 1:
@@ -112,3 +112,9 @@ class Rectangle(Base):
                 self.x = args[3]
             if len(args) >= 5:
                 self.y = args[4]
+        else:
+            self.id = kwargs.get("id", self.id)
+            self.width = kwargs.get("width", self.width)
+            self.height = kwargs.get("height", self.height)
+            self.x = kwargs.get("x", self.x)
+            self.y = kwargs.get("y", self.y)
