@@ -92,3 +92,8 @@ class Rectangle(Base):
         for _ in range(self.height):
             rectangle = '#' * self.width
             print(rectangle)
+
+    def __str__(self):
+        """Print a user friendly representation"""
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - " \
+            f"{self.width}/{self.height}"
