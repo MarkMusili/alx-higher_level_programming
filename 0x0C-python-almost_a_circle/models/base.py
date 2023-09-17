@@ -27,7 +27,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """
-        serilize the json representation
+        Serilize the json representation
         Return:
             A JSON representation
         """
@@ -38,7 +38,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """
-        Deserilize the json representation
+        Save the json representation
         """
         if list_objs is None:
             list_objs = []
@@ -47,3 +47,9 @@ class Base:
             [obj.to_dictionary() for obj in list_objs])
         with open(filename, 'w') as f:
             f.write(json_string)
+
+    def from_json_string(json_string):
+        """Deserilize the json representation"""
+        if json_string is None:
+            return "[]"
+        return json.loads(f"[{json_string}]")
