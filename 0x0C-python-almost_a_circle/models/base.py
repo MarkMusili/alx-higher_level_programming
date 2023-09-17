@@ -39,6 +39,8 @@ class Base:
     def save_to_file(cls, list_objs):
         """
         Save the json representation
+        arg:
+            list_objs : list of objects
         """
         if list_objs is None:
             list_objs = []
@@ -49,7 +51,26 @@ class Base:
             f.write(json_string)
 
     def from_json_string(json_string):
-        """Deserilize the json representation"""
+        """
+        Deserilize the json representation
+        Arg:
+            json_string (str): serilized data
+        Return:
+            deserilized data
+        """
         if json_string is None:
             return "[]"
         return json.loads(f"[{json_string}]")
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Creates a class
+        Arg:
+            dictionary: pointer to  a dictionary
+        Return:
+             A class
+        """
+        dummy = cls(1, 6, 1, 1)
+        dummy.update(**dictionary)
+        return dummy
