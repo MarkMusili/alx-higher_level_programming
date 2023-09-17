@@ -3,6 +3,7 @@
 This module defines a base class:
 that will the the parent class of all the other class
 """
+import json
 
 
 class Base:
@@ -22,3 +23,12 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """
+        Return:
+            A JSON representation
+        """
+        if list_dictionaries is None:
+            return "[]"
+        return json.dumps(f"{list_dictionaries}")
