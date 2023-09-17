@@ -59,3 +59,16 @@ class Square(Rectangle):
             self.size = kwargs.get("size", self.size)
             self.x = kwargs.get("x", self.x)
             self.y = kwargs.get("y", self.y)
+
+    def to_dictionary(self):
+        """
+        Represent as a dictionary
+        Return:
+            my_dict - dictionary
+        """
+        my_dict = {}
+        my_dict['id'] = self.id
+        my_dict['size'] = self.size
+        my_dict['x'] = self.x
+        my_dict['y'] = self.y
+        return my_dict
