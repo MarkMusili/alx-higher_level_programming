@@ -26,3 +26,14 @@ class Square(Rectangle):
         Represent the square in user friendly manner
         """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
+    @property
+    def size(self):
+        """The getter for size"""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """Size setter"""
+        self.width = value
+        self.height = value
