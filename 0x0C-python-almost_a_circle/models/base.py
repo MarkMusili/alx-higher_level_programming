@@ -90,8 +90,9 @@ class Base:
         list_of_instances = []
         try:
             with open(filename, 'r') as f:
-                file_contents = json.load(f)
-            for item in file_contents:
+                file_contents = f.read()
+                contents = Base.from_json_string(file_contents)
+            for item in contents:
                 instance = cls.create(**item)
                 list_of_instances.append(instance)
         except FileNotFoundError:

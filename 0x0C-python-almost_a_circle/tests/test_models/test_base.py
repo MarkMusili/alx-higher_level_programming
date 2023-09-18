@@ -59,11 +59,11 @@ class TestBase(unittest.TestCase):
             {'height': 4, 'width': 10, 'id': 89},
             {'height': 7, 'width': 1, 'id': 7}
         ]
-        empty = '[]'
         self.assertEqual(list_output, expected)
     
     def from_json_string(self):
         """Test an empty string"""
+        empty = '[]'
         self.assertEqual('[]', Base.from_json_string(None))
         self.assertEqual([], Base.from_json_string(empty))
 
