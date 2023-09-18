@@ -59,9 +59,10 @@ class TestBase(unittest.TestCase):
             {'height': 4, 'width': 10, 'id': 89},
             {'height': 7, 'width': 1, 'id': 7}
         ]
-
+        empty = '[]'
         self.assertEqual(list_output, expected)
         self.assertEqual('[]', Base.from_json_string(None))
+        self.assertEqual([], Base.from_json_string(empty))
 
     def test_create(self):
         """Test create method"""
