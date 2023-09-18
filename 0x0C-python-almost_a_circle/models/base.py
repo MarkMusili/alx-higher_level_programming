@@ -59,7 +59,7 @@ class Base:
         Return:
             deserilized data
         """
-        if json_string is None:
+        if json_string is None or json_string is "[]":
             return "[]"
         return json.loads(json_string)
 
@@ -91,7 +91,7 @@ class Base:
         try:
             with open(filename, 'r') as f:
                 file_contents = f.read()
-                contents = Base.from_json_string(file_contents)
+                contents = cls.from_json_string(file_contents)
             for item in contents:
                 instance = cls.create(**item)
                 list_of_instances.append(instance)
