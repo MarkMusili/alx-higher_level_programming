@@ -15,6 +15,7 @@ class Base:
 
     def __init__(self, id=None):
         """
+        Class constructor
         Arg:
             id (int): Number associated with an instance
         """
@@ -33,7 +34,7 @@ class Base:
         """
         if list_dictionaries is None:
             return "[]"
-        return json.dumps(f"{list_dictionaries}")
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -60,12 +61,12 @@ class Base:
         """
         if json_string is None:
             return "[]"
-        return json.loads(f"[{json_string}]")
+        return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
         """
-        Creates a class
+        Creates a class instance
         Arg:
             dictionary: pointer to  a dictionary
         Return:
@@ -74,3 +75,22 @@ class Base:
         dummy = cls(1, 6, 1, 1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Read from a json file
+        Return:
+            list of instances
+        """
+        filename = cls.__name__ + ".json"
+        list_of_instances = []
+        try:
+            with open(filename, 'r') as f:
+                file_contents = json.load(f)
+            for item in file_contents:
+                instance = cls.create(**item)
+                list_of_instances.append(instance)
+        except FileNotFoundError:
+            pass
+        return list_of_instances
