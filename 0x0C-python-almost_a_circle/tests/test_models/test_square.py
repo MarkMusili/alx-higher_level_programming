@@ -91,7 +91,7 @@ class TestBase(unittest.TestCase):
         s1 = Square(4, 1, 1, 12)
         s1.update(24, 8, 2, 2)
         self.assertEqual(str(s1), '[Square] (24) 2/2 - 8')
-    
+
     def test_update_with_kwargs(self):
         """Test the update method with key word argument"""
         s1 = Square(4, 1, 1, 12)
