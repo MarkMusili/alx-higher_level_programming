@@ -72,7 +72,9 @@ class Base:
         Return:
              A class
         """
-        dummy = cls(1, 6, 1, 1)
+        if cls.__name__ == "Rectangle":
+            dummy = cls(2, 6)
+        dummy = cls(4)
         dummy.update(**dictionary)
         return dummy
 
