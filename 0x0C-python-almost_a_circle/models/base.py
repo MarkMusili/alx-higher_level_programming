@@ -59,8 +59,8 @@ class Base:
         Return:
             deserilized data
         """
-        if json_string is None or json_string is "[]":
-            return "[]"
+        if json_string is None or json_string is []:
+            return []
         return json.loads(json_string)
 
     @classmethod
