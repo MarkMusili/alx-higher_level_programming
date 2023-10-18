@@ -7,5 +7,4 @@ WHERE EXISTS (
     FROM tv_show_genres AS tsg
     WHERE tsg.show_id = tv_shows.id
 )
-ORDER BY tv_shows.title ASC, tv_show_genres.genre_id ASC;
-
+ORDER BY tv_shows.title, tv_show_genres.genre_id ASC;
