@@ -1,0 +1,5 @@
+-- Create a table on my server with constrains
+CREATE TABLE IF NOT EXISTS unique_id (
+    id INT UNIQUE DEFAULT 1,
+    name VARCHAR(256)
+);
