@@ -33,10 +33,10 @@ def list_states(username, password, database, state_name):
     cursor = connection.cursor()
 
     # Query to be executed
-    query = 'SELECT * FROM states WHERE name = "Arizona" ORDER BY states.id'
+    query = 'SELECT * FROM states WHERE name = %s ORDER BY states.id'
 
     # Execute the querry
-    cursor.execute(query)
+    cursor.execute(query, (state_name,))
 
     # Fetch and print the results
     results = cursor.fetchall()
