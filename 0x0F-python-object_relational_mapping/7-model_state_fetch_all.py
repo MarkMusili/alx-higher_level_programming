@@ -15,9 +15,9 @@ if __name__ == "__main__":
     """
     username, password, name = sys.argv[1:]
     # Establish a connection
-    sql_url = f"mysql+mysqldb://{username}:{password}@localhost:3306/hbtn_0e_6_usa"
+    ul = f"mysql+mysqldb://{username}:{password}@localhost:3306/hbtn_0e_6_usa"
 
-    engine = create_engine(sql_url, pool_pre_ping=True)
+    engine = create_engine(ul, pool_pre_ping=True)
 
     # Create a session to query
     Session = sessionmaker(bind=engine)
@@ -26,4 +26,3 @@ if __name__ == "__main__":
     # Query
     for instance in session.query(State).order_by(State.id):
         print(instance.id, instance.name, sep=": ")
-
