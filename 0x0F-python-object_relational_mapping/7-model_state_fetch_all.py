@@ -13,8 +13,6 @@ def query_from(username, password, name):
     """
     This function querries from a database
     """
-    States = State
-
     # Establish a connection
     sql_url = f"mysql://{username}:{password}@localhost:3306/hbtn_0e_6_usa"
 
@@ -25,9 +23,8 @@ def query_from(username, password, name):
     session = Session()
 
     # Query
-    states = session.query(States).order_by(State.id)
-    for state in states:
-        print(f"{state.id}: {state.name}")
+    for instance in session.query(State).order_by(State.id):
+        print(f"{instance.id}: {instance.name}")
 
 
 if __name__ == "__main__":
