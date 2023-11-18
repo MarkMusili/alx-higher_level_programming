@@ -33,8 +33,8 @@ def list_states(username, password, database, state_name):
     cursor = connection.cursor()
 
     # Query to be executed
-    query1 = "SELECT * FROM states WHERE name='{}'".format(state_name)
-    query2 = "ORDER BY states.id"
+    query1 = "SELECT * FROM states WHERE name "
+    query2 = "LIKE BINARY '{}' ORDER BY states.id".format(state_name)
     query = query1 + query2
 
     # Execute the querry
