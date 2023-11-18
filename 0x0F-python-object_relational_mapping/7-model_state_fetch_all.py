@@ -25,6 +25,6 @@ if __name__ == "__main__":
     session = Session()
 
     # Query
-    for instance in session.query(State).order_by(State.id):
+    for instance in session.query(State).order_by(states.id):
         print(instance.id, instance.name, sep=": ")
 
