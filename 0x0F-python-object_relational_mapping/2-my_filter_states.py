@@ -35,9 +35,10 @@ def list_states(username, password, database, state_name):
     # Query to be executed
     query1 = "SELECT * FROM states WHERE name='{}'".format(state_name)
     query2 = "ORDER BY states.id"
+    query = query1 + query2
 
     # Execute the querry
-    cursor.execute(query1 + query2)
+    cursor.execute(query)
 
     # Fetch and print the results
     results = cursor.fetchall()
