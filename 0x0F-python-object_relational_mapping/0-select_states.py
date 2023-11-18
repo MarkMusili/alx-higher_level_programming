@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-import sys
-import MySQLdb
 """
 This module uses the Module MySQLdb to interact with a database
 """
+import sys
+import MySQLdb
+
 
 if __name__ == '__main__':
     """
