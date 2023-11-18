@@ -32,7 +32,7 @@ def list_states(username, password, database):
     cursor = connection.cursor()
 
     # Query to be executed
-    query = 'SELECT * FROM states WHERE name LIKE "N%" ORDER BY states.id'
+    query = 'SELECT * FROM states WHERE name LIKE "N%" ORDER BY states.id ASC'
 
     # Execute the querry
     cursor.execute(query)
