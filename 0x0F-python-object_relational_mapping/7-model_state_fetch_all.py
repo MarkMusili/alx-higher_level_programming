@@ -18,6 +18,7 @@ def query_from(username, password, name):
 
     engine = create_engine(sql_url)
 
+    Base.metadata.create_all(engine)
     # Create a session to query
     Session = sessionmaker(bind=engine)
     session = Session()
