@@ -5,8 +5,7 @@ import MySQLdb
 This module uses the Module MySQLdb to interact with a database
 """
 
-
-def list_states(username, password, database):
+if __name__ == '__main__':
     """
     This function lists the states from a database
     Args:
@@ -17,6 +16,7 @@ def list_states(username, password, database):
     # connection details
     host = 'localhost'
     port = 3306
+    username, password, database = sys.argv[1:4]
 
     # establish a concetion
     connection = MySQLdb.connect(
@@ -44,10 +44,3 @@ def list_states(username, password, database):
     # Close the cursor and connection
     cursor.close()
     connection.close()
-
-
-if __name__ == '__main__':
-    username, password, database = sys.argv[1:4]
-
-    list_states(username, password, database)
-
