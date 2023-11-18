@@ -25,8 +25,7 @@ def query_from(username, password, name):
 
     # Query
     for instance in session.query(State).order_by(State.id):
-        print(f"{instance.id}: {instance.name}")
-
+        print(instance.id, instance.name, sep=": ")
 
 if __name__ == "__main__":
     username, password, name = sys.argv[1:]
