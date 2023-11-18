@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-import sys
-import MySQLdb
 """
 This module uses the Module MySQLdb to interact with a database
 """
+import sys
+import MySQLdb
 
 
 def list_states(username, password, database):
