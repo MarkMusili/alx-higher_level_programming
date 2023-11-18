@@ -19,12 +19,11 @@ if __name__ == "__main__":
 
     engine = create_engine(sql_url, pool_pre_ping=True)
 
-    Base.metadata.create_all(engine)
     # Create a session to query
     Session = sessionmaker(bind=engine)
     session = Session()
 
     # Query
-    for instance in session.query(State).order_by(states.id):
+    for instance in session.query(State).order_by(State.id):
         print(instance.id, instance.name, sep=": ")
 
