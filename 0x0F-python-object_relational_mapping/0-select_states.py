@@ -31,7 +31,7 @@ def list_states(username, password, database):
     cursor = connection.cursor()
 
     # Query to be executed
-    query = 'SELECT * FROM states ORDER BY id'
+    query = 'SELECT * FROM states ORDER BY states.id'
 
     # Execute the querry
     cursor.execute(query)
