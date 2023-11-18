@@ -33,10 +33,11 @@ def list_states(username, password, database, state_name):
     cursor = connection.cursor()
 
     # Query to be executed
-    query = 'SELECT * FROM states WHERE name = %s ORDER BY states.id'
+    query = """SELECT * FROM states WHERE name='{}'
+            ORDER BY states.id""".format(state_name)
 
     # Execute the querry
-    cursor.execute(query, (state_name,))
+    cursor.execute(query)
 
     # Fetch and print the results
     results = cursor.fetchall()
@@ -52,4 +53,3 @@ if __name__ == '__main__':
     username, password, database, state_name = sys.argv[1:5]
 
     list_states(username, password, database, state_name)
-
