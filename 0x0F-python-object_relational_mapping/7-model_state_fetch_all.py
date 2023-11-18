@@ -9,14 +9,15 @@ from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
 
-def query_from(username, password, name):
+if __name__ == "__main__":
     """
     This function querries from a database
     """
+    username, password, name = sys.argv[1:]
     # Establish a connection
-    sql_url = f"mysql://{username}:{password}@localhost:3306/hbtn_0e_6_usa"
+    sql_url = f"mysql+mysqldb://{username}:{password}@localhost:3306/hbtn_0e_6_usa"
 
-    engine = create_engine(sql_url)
+    engine = create_engine(sql_url, pool_pre_ping=True)
 
     Base.metadata.create_all(engine)
     # Create a session to query
@@ -27,6 +28,3 @@ def query_from(username, password, name):
     for instance in session.query(State).order_by(State.id):
         print(instance.id, instance.name, sep=": ")
 
-if __name__ == "__main__":
-    username, password, name = sys.argv[1:]
-    query_from(username, password, name)
