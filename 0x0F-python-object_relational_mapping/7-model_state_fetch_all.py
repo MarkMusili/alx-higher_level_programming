@@ -13,9 +13,9 @@ if __name__ == "__main__":
     """
     This function querries from a database
     """
-    username, password, name = sys.argv[1:]
+    username, password, name = sys.argv[1:4]
     # Establish a connection
-    ul = f"mysql+mysqldb://{username}:{password}@localhost:3306/hbtn_0e_6_usa"
+    ul = f"mysql+mysqldb://{username}:{password}@localhost:3306/{name}"
 
     engine = create_engine(ul, pool_pre_ping=True)
 
