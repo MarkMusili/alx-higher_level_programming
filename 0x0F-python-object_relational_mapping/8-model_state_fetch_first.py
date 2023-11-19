@@ -26,6 +26,6 @@ if __name__ == "__main__":
     # Query
     instance = session.query(State).first()
     if instance is None:
-        print("Nothing")
+        print("Nothing\n")
     else:
         print(instance.id, instance.name, sep=": ")
