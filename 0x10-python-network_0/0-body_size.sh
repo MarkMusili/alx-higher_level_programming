@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 # Get the Content-Length from the response header
 
 if [ -z "$1" ]; then
