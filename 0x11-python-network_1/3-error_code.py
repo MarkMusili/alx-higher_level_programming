@@ -7,8 +7,8 @@ import urllib.error
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    request_url = urllib.request.Request(url)
-    try:
-        urllib.request.urlopen(request_url)
-    except urllib.error.HTTPError as e:
-        print(f"Error code: {e.code}")
+    with urllib.request.Request(url) as request_url:
+        try:
+            urllib.request.urlopen(request_url)
+        except urllib.error.HTTPError as e:
+            print(f"Error code: {e.code}")
