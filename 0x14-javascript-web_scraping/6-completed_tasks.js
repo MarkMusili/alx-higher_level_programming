@@ -5,24 +5,24 @@ const request = require('request');
 const apiUrl = process.argv[2];
 
 request(apiUrl, (error, response, body) => {
-    if (error) {
-        console.error('Error:', error);
-    } else if (response.statusCode !== 200) {
-        console.error('Status:', response.statusCode);
-    } else {
-        const tasks = JSON.parse(body);
-        const completedTasksByUser = {};
+  if (error) {
+    console.error('Error:', error);
+  } else if (response.statusCode !== 200) {
+    console.error('Status:', response.statusCode);
+  } else {
+    const tasks = JSON.parse(body);
+    const completedTasksByUser = {};
 
-        tasks.forEach((task) => {
-            if (task.completed) {
-                if (completedTasksByUser[task.userId]) {
-                    completedTasksByUser[task.userId]++;
-                } else {
-                    completedTasksByUser[task.userId] = 1;
-                }
-            }
-        });
+    tasks.forEach((task) => {
+      if (task.completed) {
+        if (completedTasksByUser[task.userId]) {
+          completedTasksByUser[task.userId]++;
+        } else {
+          completedTasksByUser[task.userId] = 1;
+        }
+      }
+    });
 
-        console.log(completedTasksByUser);
-    }
+    console.log(completedTasksByUser);
+  }
 });
