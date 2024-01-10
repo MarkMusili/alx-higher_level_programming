@@ -1,3 +1,5 @@
-document.querySelector('#red_header').addEventListener('click', function () {
-    document.querySelector('header').style.color = '#FF0000';
+$(function () {
+    $('#red_header').click(function () {
+        $('header').css('color', '#FF0000');
+    });
 });
